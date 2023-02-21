@@ -101,7 +101,7 @@ void init_env() {
         char buf[4096];
         struct passwd pw, *result = NULL;
 
-        if (getpwuid_r(geteuid(), &pw, buf, sizeof(buf), &result) != 0 || ! result)
+        if (getpwuid_r(geteuid(), &pw, buf, sizeof(buf), &result) != 0 || ! result){
 
             Run.Env.home = Str_dup("/tmp");
             Run.Env.user = Str_dup("nobody");
